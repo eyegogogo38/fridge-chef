@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { MealTime, Recipe } from './types';
-import { getRecipeRecommendations, generateRecipeImage } from './services/geminiService';
-import RecipeCard from './components/RecipeCard';
+import { MealTime, Recipe } from './types.ts';
+import { getRecipeRecommendations, generateRecipeImage } from './services/geminiService.ts';
+import RecipeCard from './components/RecipeCard.tsx';
 
 const App: React.FC = () => {
   const [ingredients, setIngredients] = useState<string[]>([]);
