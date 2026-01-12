@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Recipe } from '../types.ts';
+import { Recipe } from '../types';
 
 interface RecipeCardProps {
   recipe: Recipe;
@@ -9,7 +9,6 @@ interface RecipeCardProps {
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
     <div className="group bg-neutral-900/40 backdrop-blur-3xl rounded-[3.5rem] shadow-[0_20px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden border border-white/5 flex flex-col transition-all duration-700 hover:border-orange-500/30 hover:shadow-[0_40px_100px_-20px_rgba(249,115,22,0.15)]">
-      {/* Recipe Image Container with Dark Gradient Overlay */}
       <div className="relative h-80 overflow-hidden bg-black">
         {recipe.imageUrl ? (
           <>

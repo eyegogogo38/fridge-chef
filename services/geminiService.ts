@@ -1,14 +1,15 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
-import { MealTime, Recipe, RecipeResponse } from "../types.ts";
+import { MealTime, Recipe, RecipeResponse } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+const getAI = () => new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 
 /**
  * Generates a photorealistic image for a given recipe
  */
 export const generateRecipeImage = async (recipeName: string, description: string): Promise<string | undefined> => {
   try {
+    const ai = getAI();
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash-image',
       contents: {
@@ -35,6 +36,7 @@ export const getRecipeRecommendations = async (
   ingredients: string[],
   mealTime: MealTime
 ): Promise<RecipeResponse> => {
+  const ai = getAI();
   const model = "gemini-3-flash-preview";
   
   const prompt = `냉장고에 있는 재료들: [${ingredients.join(", ")}]

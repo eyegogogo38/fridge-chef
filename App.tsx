@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { MealTime, Recipe } from './types.ts';
-import { getRecipeRecommendations, generateRecipeImage } from './services/geminiService.ts';
-import RecipeCard from './components/RecipeCard.tsx';
+import { MealTime, Recipe } from './types';
+import { getRecipeRecommendations, generateRecipeImage } from './services/geminiService';
+import RecipeCard from './components/RecipeCard';
 
 const App: React.FC = () => {
   const [ingredients, setIngredients] = useState<string[]>([]);
@@ -56,12 +56,10 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen py-16 px-6 lg:py-28 relative overflow-hidden">
-      {/* Background Decorative Glows */}
       <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-900/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Elite Header Section */}
         <header className="text-center mb-32 space-y-8">
           <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-neutral-900 border border-white/5 text-neutral-400 text-[10px] font-black uppercase tracking-[0.4em] mb-4 shadow-2xl">
             <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
@@ -77,7 +75,6 @@ const App: React.FC = () => {
         </header>
 
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-20 items-start">
-          {/* Elite Sidebar */}
           <div className="xl:col-span-4 space-y-10 sticky top-16">
             <div className="bg-neutral-900/40 backdrop-blur-3xl p-12 rounded-[4rem] shadow-[0_30px_100px_rgba(0,0,0,0.6)] border border-white/5">
               <section className="mb-14">
@@ -172,7 +169,6 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          {/* Results Area */}
           <div className="xl:col-span-8">
             {recipes.length > 0 ? (
               <div className="flex flex-col gap-16">
