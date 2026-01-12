@@ -4,21 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fridge Chef - 냉장고 파먹기 요리사</title>
+    <title>Fridge Chef - Midnight Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: #fdfdfd;
+            background-color: #050505;
             background-image: 
-                radial-gradient(at 0% 0%, hsla(28,100%,95%,1) 0, transparent 50%), 
-                radial-gradient(at 50% 0%, hsla(12,100%,96%,1) 0, transparent 50%), 
-                radial-gradient(at 100% 0%, hsla(48,100%,95%,1) 0, transparent 50%);
+                radial-gradient(at 0% 0%, hsla(240,15%,15%,1) 0, transparent 40%), 
+                radial-gradient(at 100% 0%, hsla(20,50%,10%,1) 0, transparent 40%),
+                radial-gradient(at 50% 100%, hsla(240,10%,10%,1) 0, transparent 50%);
+            color: #ffffff;
             min-height: 100vh;
+        }
+        ::selection {
+            background: rgba(249, 115, 22, 0.3);
+            color: #ffffff;
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
         }
     </style>
 <script type="importmap">
@@ -34,5 +53,6 @@
 </head>
 <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
